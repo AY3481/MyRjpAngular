@@ -1,0 +1,41 @@
+<div class="login-register">
+    <div class="login-register-box">      
+      <!-- <div fxLayout="column" fxLayout.xs="row">
+        <div class="child-1">1</div>
+        <div class="child-2">2</div>
+      </div> -->
+      <mat-card>
+        <mat-card-title class="text-center">Login</mat-card-title>
+        <mat-card-content>          
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="text-center">
+              <!-- <img alt="homepage" src="assets/images/logo-icon.png"> -->
+              <!-- <h4 class="m-t-0">Login</h4> -->
+            </div>
+            <div>
+            <mat-form-field class="full-width-input m-b-30">
+              <input matInput placeholder="User" 
+                    formControlName="userName">
+              <mat-icon matSuffix>person</mat-icon>
+              <mat-error *ngIf="isFieldInvalid('userName')">
+                Please enter your user name
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="full-width-input m-b-30">
+              <!-- <input matInput type="password" placeholder="Password" formControlName="password"> -->
+              <input matInput [type]="flag ? 'password' : 'text'" placeholder="Enter your password"
+                        formControlName="password">
+              <mat-icon (click)="flag=!flag" matSuffix>{{ flag ? 'visibility' : 'visibility_off' }}</mat-icon>
+              <mat-error *ngIf="isFieldInvalid('password')">
+                Please enter your password
+              </mat-error>
+            </mat-form-field>
+          </div>
+            <button [disabled]="!this.form.valid" mat-raised-button color="primary" class="btn-block btn-lg" type="submit">Login</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

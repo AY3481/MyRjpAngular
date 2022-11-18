@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<mat-dialog-content [formGroup]="form">
+  <div>
+    <mat-form-field class="m-b-20">
+        <input matInput placeholder="Initial Credit" formControlName="InitialCredit">
+        <mat-error>
+          <div *ngIf="f['InitialCredit'].touched && f['InitialCredit'].invalid">
+            <div *ngIf="f['InitialCredit'].errors && f['InitialCredit'].errors['required']">
+                Please enter your initial credit
+            </div>
+            <div *ngIf="f['InitialCredit'].errors && f['InitialCredit'].errors['pattern']">
+                Please enter digits only
+            </div>
+          </div>
+        </mat-error>        
+    </mat-form-field>
+  </div> 
+</mat-dialog-content>
+<!-- {{ form.value | json }} -->
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCloseClick()">Cancel</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. 
+[mat-dialog-close]="form.value" -->
+  <button mat-raised-button color="primary" (click)="onSaveClick()" cdkFocusInitial>Save</button>
+</div>

@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* mat snackbar extra classes */
+/*********************/
+.mat-snack-bar-container-success { background: #4CAF50; }
+.mat-snack-bar-container-error { background: #F44336; }
+/*********************/
+
+.full-width-input {
+    width: 100%;;
+} 
+
+.m-b-20 {
+    margin-bottom: 20px;;
+}
+
+.m-b-30 {
+    margin-bottom: 30px;;
+}

@@ -1,0 +1,36 @@
+<!-- <p>dev-list works!</p> -->
+<!-- <button mat-icon-button color="primary">
+  <mat-icon>add</mat-icon> Customer
+</button> 
+<a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+-->
+
+<div align="center" style="margin-top: 15px;">
+  <button mat-stroked-button color="primary" (click)="onAddClick()">+ Add customer</button>
+</div>
+
+<mat-nav-list class="bg-white mat-list-nowrap" *ngIf="_List_Customers != null">
+    <ng-container *ngFor="let customer of _List_Customers">
+      <mat-list-item>
+          <mat-icon color="primary" mat-list-icon>person</mat-icon>          
+          <p matLine>
+            <span class="text-info">Name: {{ customer.Name }} {{ customer.SurName }}</span>
+          </p>             
+          <p matLine>
+            <span> Balance: {{ customer.Balance }} </span>                                
+          </p>
+          <p matLine>
+            <b>Transactions ({{ customer.Transactions.length ?? 0 }})</b><br>
+            <span *ngFor="let trans of customer.Transactions">
+              <span><u>Transaction#:</u> {{ trans.Id }} - Credit: {{ trans.Credit }} ~|~ </span>
+            </span>     
+          </p>
+          
+          <button mat-mini-fab color color="accent" title="Add Account" (click)="onAddAccountClick(customer)">
+            <mat-icon>add</mat-icon>
+          </button>&nbsp;
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      
+    </ng-container>
+</mat-nav-list>
