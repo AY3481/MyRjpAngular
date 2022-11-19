@@ -8,7 +8,7 @@ export class ProxyService {
   constructor(private api: Api) { }
 
   getCustomerTransactions(): Observable<any> {
-    return this.api.get("Customer/customer-transactions/0");
+    return this.api.get("Customer/customer-transactions");
   }
   
   addCustomerAccount(data: any): Observable<any> {

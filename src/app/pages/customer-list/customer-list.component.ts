@@ -46,10 +46,8 @@ export class CustListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
         id: cust.Id
-    };
-    alert(cust.Id)
+    };  
     let dialogRef = this.commonSvc.openDialog("Add Account for (" + cust.Name + ' ' + cust.SurName + ")", AddCustomerAccountComponent, dialogConfig);
-    
     dialogRef.afterClosed().subscribe(x => {
       //alert(JSON.stringify(x));
       if (x != null){
